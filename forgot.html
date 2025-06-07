@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quên mật khẩu</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <button id="themeToggle" style="margin-left: 15px;">🌙</button>
+
+</head>
+<body>
+  <div class="auth-container">
+    <h2>🔐 Quên mật khẩu</h2>
+    <form id="forgotForm">
+      <input type="text" id="forgotUsername" placeholder="Tên đăng nhập" required />
+      <button type="submit">Gửi mã xác nhận</button>
+    </form>
+    <p id="forgotMsg"></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("1DIXP2yX-BjDOUU7r"); // Public key của bạn
+  </script>
+  <script src="auth.js"></script>
+</body>
+</html>

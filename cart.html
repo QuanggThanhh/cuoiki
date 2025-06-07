@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chi tiết giỏ hàng</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <header>
+    <h1>🛍️ Chi tiết giỏ hàng</h1>
+    <a href="index.html">← Quay lại mua sắm</a>
+    <button id="themeToggle" style="margin-left: 15px;">🌙</button>
+
+  </header>
+
+  <main>
+    <div id="cartDetails"></div>
+    <button id="checkoutBtn">✅ Xác nhận đặt hàng</button>
+  </main>
+
+  <!-- ✅ Thêm SDK mới nhất của EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("1DIXP2yX-BjDOUU7r"); // 🔐 Public Key của bạn
+  </script>
+
+  <!-- Script chính -->
+  <script src="cart.js"></script>
+  <footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>👨‍💻 Giới thiệu nhóm</h3>
+      <ul>
+        <li>Nguyễn Quang Thành – 24IT247</li>
+        <li>Trần Thái Hoàng – 24IT336</li>
+        <li>Nguyễn Kim Bảo – 24ITE123</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>📞 Liên hệ</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/" target="_blank">🌐 Facebook</a></li>
+        <li><a href="https://zalo.me/" target="_blank">💬 Zalo</a></li>
+        <li>📱 0123 456 789</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

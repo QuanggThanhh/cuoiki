@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Đăng ký</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <button id="themeToggle" style="margin-left: 15px;">🌙</button>
+
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Đăng ký tài khoản</h2>
+    <form id="registerForm">
+      <input type="text" id="username" placeholder="Tên đăng nhập" required />
+      <input type="email" id="email" placeholder="Email của bạn" required />
+      <input type="password" id="password" placeholder="Mật khẩu" required />
+      <input type="password" id="confirmPassword" placeholder="Xác nhận mật khẩu" required />
+      <button type="submit">Đăng ký</button>
+    </form>
+    <p>Đã có tài khoản? <a href="login.html">Đăng nhập ngay</a></p>
+    <p id="registerMsg"></p>
+  </div>
+  <script src="auth.js"></script>
+</body>
+</html>

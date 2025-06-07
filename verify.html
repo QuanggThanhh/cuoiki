@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Đặt lại mật khẩu</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <button id="themeToggle" style="margin-left: 15px;">🌙</button>
+
+</head>
+<body>
+  <div class="auth-container">
+    <h2>🔑 Xác nhận OTP & Đặt lại mật khẩu</h2>
+    <form id="verifyForm">
+      <input type="text" id="otp" placeholder="Nhập mã OTP" required />
+      <input type="password" id="newPassword" placeholder="Mật khẩu mới" required />
+      <input type="password" id="confirmPassword" placeholder="Xác nhận mật khẩu" required />
+      <button type="submit">Cập nhật mật khẩu</button>
+    </form>
+    <p id="verifyMsg"></p>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

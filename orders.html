@@ -1,0 +1,89 @@
+<!-- orders.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Đơn hàng của tôi</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <button id="themeToggle" style="margin-left: 15px;">🌙</button>
+
+
+</head>
+<body>
+  <header>
+    <h1>📦 Đơn hàng đã đặt</h1>
+    <a href="index.html">← Quay lại mua sắm</a>
+  </header>
+
+  <main>
+    <div id="orderList"></div>
+  </main>
+
+  <script>
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const orderListEl = document.getElementById("orderList");
+
+    if (!currentUser) {
+      orderListEl.innerHTML = "<p>Vui lòng đăng nhập để xem đơn hàng.</p>";
+    } else {
+      const orders = JSON.parse(localStorage.getItem("orders")) || [];
+      const userOrders = orders.filter(o => o.username === currentUser.username);
+
+      if (userOrders.length === 0) {
+        orderListEl.innerHTML = "<p>Bạn chưa có đơn hàng nào.</p>";
+      } else {
+        let html = "";
+        userOrders.reverse().forEach((order, idx) => {
+  let total = 0;
+  let itemsHtml = order.items.map(item => {
+    const itemTotal = item.quantity * item.price;
+    total += itemTotal;
+    return `<li>${item.name} × ${item.quantity} - ${itemTotal.toLocaleString()}₫</li>`;
+  }).join("");
+
+  // Nếu chưa có trường status trong đơn hàng thì mặc định
+  const status = order.status || "🔄 Đang xử lý";
+
+  // Tạo mã đơn #001, #002,...
+  const orderCode = `#${String(userOrders.length - idx).padStart(3, "0")}`;
+
+  html += `
+    <div class="order-card">
+      <h3>🧾 Đơn hàng ${orderCode}</h3>
+      <p><strong>Ngày đặt:</strong> ${order.date}</p>
+      <p><strong>Trạng thái:</strong> ${status}</p>
+      <ul>${itemsHtml}</ul>
+      <p><strong>Tổng cộng:</strong> ${total.toLocaleString()}₫</p>
+    </div>
+  `;
+});
+
+        orderListEl.innerHTML = html;
+      }
+    }
+  </script>
+
+  <footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>👨‍💻 Giới thiệu nhóm</h3>
+      <ul>
+        <li>Nguyễn Quang Thành – 24IT247</li>
+        <li>Trần Thái Hoàng – 24IT336</li>
+        <li>Nguyễn Kim Bảo – 24ITE123</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>📞 Liên hệ</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/" target="_blank">🌐 Facebook</a></li>
+        <li><a href="https://zalo.me/" target="_blank">💬 Zalo</a></li>
+        <li>📱 0123 456 789</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

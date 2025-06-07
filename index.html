@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop đơn giản</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <button id="themeToggle" style="margin-left: 15px;">🌙</button>
+
+</head>
+
+<body>
+  <header>
+  <h1>🛒 Cửa hàng nước hoa mini</h1>
+  <nav id="topNav">
+    <a href="index.html">Trang chủ</a>
+    <a href="cart.html" id="cart">Giỏ hàng (0) - 0₫</a>
+    <a href="orders.html">Đơn hàng</a>
+    <span id="userStatus"></span>
+  </nav>
+</header>
+
+
+<section id="controls">
+  <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." />
+  <select id="categoryFilter">
+    <option value="">Tất cả danh mục</option>
+    <option value="nu">Nước hoa nữ</option>
+    <option value="nam">Nước hoa nam</option>
+    <option value="unisex">Unisex</option>
+    <option value="combo">Combo quà tặng</option>
+    <option value="bodymist">Xịt thơm toàn thân</option>
+  </select>
+</section>
+<div id="brandFilterContainer">
+  <label for="brandFilter"><strong>Lọc theo thương hiệu:</strong></label>
+  <select id="brandFilter">
+    <option value="">Tất cả</option>
+    <option value="Chanel">Chanel</option>
+    <option value="Dior">Dior</option>
+    <option value="Marc Jacobs">Marc Jacobs</option>
+    <option value="Versace">Versace</option>
+    <option value="MFK">MFK</option>
+  </select>
+</div>
+
+<section id="productList" class="product-list">
+  <!-- Sản phẩm sẽ được hiển thị ở đây -->
+   
+</section>
+
+<script src="auth.js"></script>
+<script src="script.js"></script>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>👨‍💻 Giới thiệu nhóm</h3>
+      <ul>
+        <li>Nguyễn Quang Thành – 24IT247</li>
+        <li>Trần Thái Hoàng – 24IT083</li>
+        <li>Nguyễn Kim Bảo – 24ITB021</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>📞 Liên hệ</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/quang.thanh.17.03.2006" target="_blank">🌐 Facebook</a></li>
+        <li><a href="https://zalo.me/0862919023" target="_blank">💬 Zalo</a></li>
+        <li>📱 0862919023</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+ 
+</body>
+</html>
