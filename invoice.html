@@ -80,6 +80,10 @@
       setTimeout(() => {
         window.print();
       }, 500);
+      window.onafterprint = function () {
+  window.location.href = "cart.html";
+};
+
     }
   </script>
 </body>
